@@ -1,1 +1,53 @@
 # bt_buoi2_23_6
+'''Ve kim cuong'''
+high = input("Nhap chieu cao:")
+m = 2*int(high)-1
+def space(n, a):
+    for i in range(n):
+        print(a, end = "")
+def tren(m, n, high):
+    for i in range(int(high)):
+        space(m//2, " ")
+        space(n - (m//2)*2, "*")
+        space(m//2, " ")
+        print("\n")
+        m = m-2
+def duo(m, n, high):
+    for i in range(int(high)-1):
+        space(i+1, " ")
+        space( m-2, "*")
+        space(i+1, " ")
+        print("\n")
+        m = m-2
+tren(m, m, high)
+duo(m, m, high)
+'''Math question random'''
+import random
+def quiz(i):
+    print( "Question"+ str(i+1) + ":", end = '')
+    a = random.randint(1,10)
+    b = random.randint(1,10)
+    print(str(a)+"x"+str(b)+"=", end = '')
+    key = int(input())
+    if key == (a*b):
+        print("\Right!\n")
+    else:
+        print("\Wrong!\n")
+for i in range(10):
+     quiz(i)
+'''Check security'''
+mk = "kieuphuong2603"
+print("Nhap mk:")
+def check(i, n, mk):
+    if n == mk:
+        print("Dang nhap thanh cong, chao mung tro lai Ojou-sama")
+        return True
+    else:
+        if i!=4:
+            print("Moi nhap lai:")
+for i in range(5):
+    n = input()
+    if check(i,n,mk):
+        break
+    if i==4:
+        print("Ara ara, amae wa dare!")

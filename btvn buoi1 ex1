@@ -1,0 +1,29 @@
+def minigame(chuoi):
+#     chuoi = input("Nhap chuoi phan tich:")
+#     điều kiện cho len
+    if 0 > len(chuoi) or len(chuoi) >= 10^6:
+        print("Cook!")
+        return
+    nguyen_am = 'AEUIO'
+    scoreM = 0
+    scoreA = 0
+    for i in range(len(chuoi)):
+        if chuoi[i] in nguyen_am:
+            for j in range(len(chuoi)-i):
+                if chuoi[i:i+j+1] in chuoi:
+                    scoreM += 1
+        else:
+            for j in range(len(chuoi)-i):
+                if chuoi[i:i+j+1] in chuoi:
+                    scoreA += 1
+    if scoreM == scoreA:
+        print("Ok, the same~~~, no one vic")
+    if scoreM >= scoreA:
+        print("Minh victory : " + str(scoreM))
+        return
+    if scoreM <= scoreA:
+        print("An victory : " + str(scoreA))
+    return scoreM, scoreA
+print("Nhập chuoi S:")
+chuoi = input()
+minigame(chuoi)            
